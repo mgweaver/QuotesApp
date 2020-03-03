@@ -31,3 +31,7 @@ button:hover {
 table {
 
 }
+
+li {
+  display: inline;
+}
