@@ -2,7 +2,7 @@ const familyTable = document.getElementById('familyTable');
 const familyDiv = document.getElementById('familyDiv');
 
 // function showFamily() {
-//   fetch("./quotes.json")
+//   fetch("./family.json")
 //   .then(function(resp){
 //     return resp.json();
 //   })
@@ -16,7 +16,7 @@ const familyDiv = document.getElementById('familyDiv');
 
 function showFamily() {
   const request = new XMLHttpRequest();
-  request.open("get", "./quotes.json");
+  request.open("get", "./family.json");
   request.onload = () => {
     try {
       const json = JSON.parse(request.responseText);
