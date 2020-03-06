@@ -1,18 +1,7 @@
-const familyTable = document.getElementById('familyTable');
 const familyDiv = document.getElementById('familyDiv');
-
-// function showFamily() {
-//   fetch("./family.json")
-//   .then(function(resp){
-//     return resp.json();
-//   })
-//   .then(function(data) {
-//     for (let i = 0; i < data.familyQuotes.length; i++) {
-//       familyDiv.innerHTML = JSON.stringify(data.familyQuotes[i]);
-//       console.log(data.familyQuotes[i]);
-//     }
-//   });
-// }
+const agencyDiv = document.getElementById('agencyDiv');
+const agencyTable = document.getElementById('agencyTable');
+const familyTable = document.getElementById('familyTable');
 
 function showFamily() {
   const request = new XMLHttpRequest();
@@ -20,7 +9,7 @@ function showFamily() {
   request.onload = () => {
     try {
       const json = JSON.parse(request.responseText);
-      populateTable(json, familyDiv);
+      populateTable(json, familyDiv, familyTable);
     } catch (e) {
       familyDiv.innerHTML = "Could not load quotes."
     }
@@ -28,10 +17,24 @@ function showFamily() {
   request.send();
 }
 
-function populateTable(json, divToFill) {
-while (familyTable.firstChild) {
-  familyTable.removeChild(familyTable.firstChild);
+function showAgency() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./agency.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, agencyDiv, agencyTable);
+    } catch (e) {
+      agencyDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
 }
+
+function populateTable(json, divToFill, tableToFill) {
+  while (tableToFill.firstChild) {
+    tableToFill.removeChild(familyTable.firstChild);
+  }
   json.forEach((row) => {
     const tr = document.createElement("tr");
     row.forEach((cell) => {
@@ -39,10 +42,6 @@ while (familyTable.firstChild) {
       td.textContent = cell;
       tr.appendChild(td);
     });
-    familyTable.appendChild(tr);
+    tableToFill.appendChild(tr);
   });
-}
-
-function showAgency() {
-  document.getElementById('agencyDiv').innerHTML = "Agency";
 }
