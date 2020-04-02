@@ -72,6 +72,19 @@ function showAddiction() {
   request.send();
 }
 
+function showService() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./service.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, serviceDiv, serviceTable);
+    } catch (e) {
+      serviceDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
 
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
