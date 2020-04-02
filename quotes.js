@@ -140,5 +140,6 @@ function populateTable(json, divToFill, tableToFill) {
       tr.appendChild(td);
     });
     tableToFill.appendChild(tr);
+    tableToFill.style.border = "solid #0000FF";
   });
 }
