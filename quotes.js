@@ -33,7 +33,7 @@ function showAgency() {
 
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
-    tableToFill.removeChild(familyTable.firstChild);
+    tableToFill.removeChild(tableToFill.firstChild);
   }
   json.forEach((row) => {
     const tr = document.createElement("tr");
