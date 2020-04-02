@@ -100,6 +100,20 @@ function showLaziness() {
   request.send();
 }
 
+function showRepentance() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./repentance.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, repentanceDiv, repentanceTable);
+    } catch (e) {
+      repentanceDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
+
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
     tableToFill.removeChild(tableToFill.firstChild);
