@@ -114,6 +114,20 @@ function showRepentance() {
   request.send();
 }
 
+function showForgiveness() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./forgiveness.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, forgivenessDiv, forgivenessTable);
+    } catch (e) {
+      forgivenessDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
+
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
     tableToFill.removeChild(tableToFill.firstChild);
