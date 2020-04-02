@@ -58,6 +58,21 @@ function showAtonement() {
   request.send();
 }
 
+function showAddiction() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./addiction.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, addictionDiv, addictionTable);
+    } catch (e) {
+      addictionDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
+
+
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
     tableToFill.removeChild(tableToFill.firstChild);
