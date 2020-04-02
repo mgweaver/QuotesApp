@@ -86,6 +86,20 @@ function showService() {
   request.send();
 }
 
+function showLaziness() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./laziness.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, lazinessDiv, lazinessTable);
+    } catch (e) {
+      lazinessDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
+
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
     tableToFill.removeChild(tableToFill.firstChild);
