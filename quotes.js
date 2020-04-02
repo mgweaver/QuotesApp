@@ -44,6 +44,20 @@ function showAgency() {
   request.send();
 }
 
+function showAtonement() {
+  const request = new XMLHttpRequest();
+  request.open("get", "./atonement.json");
+  request.onload = () => {
+    try {
+      const json = JSON.parse(request.responseText);
+      populateTable(json, atonementDiv, atonementTable);
+    } catch (e) {
+      atonementDiv.innerHTML = "Could not load quotes."
+    }
+  };
+  request.send();
+}
+
 function populateTable(json, divToFill, tableToFill) {
   while (tableToFill.firstChild) {
     tableToFill.removeChild(tableToFill.firstChild);
