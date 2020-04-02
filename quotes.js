@@ -1,7 +1,20 @@
 const familyDiv = document.getElementById('familyDiv');
 const agencyDiv = document.getElementById('agencyDiv');
-const agencyTable = document.getElementById('agencyTable');
+const atonementDiv = document.getElementById('atonementDiv');
+const addictionDiv = document.getElementById('addictionDiv');
+const serviceDiv = document.getElementById('serviceDiv');
+const lazinessDiv = document.getElementById('lazinessDiv');
+const repentanceDiv = document.getElementById('repentanceDiv');
+const forgivenessDiv = document.getElementById('forgivenessDiv');
+
 const familyTable = document.getElementById('familyTable');
+const agencyTable = document.getElementById('agencyTable');
+const atonementTable = document.getElementById('atonementTable');
+const addictionTable = document.getElementById('addictionTable');
+const serviceTable = document.getElementById('serviceTable');
+const lazinessTable = document.getElementById('lazinessTable');
+const repentanceTable = document.getElementById('repentanceTable');
+const forgivenessTable = document.getElementById('forgivenessTable');
 
 function showFamily() {
   const request = new XMLHttpRequest();
