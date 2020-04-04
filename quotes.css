@@ -3,16 +3,14 @@ body {
 }
 
 header {
-  width: 92vw;
+  width: 92%;
   height: 50px;
-
   position: absolute;
   padding: 15px;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5;
-
   background: #25b99a;
   box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
   border-bottom-right-radius: 10px;
@@ -35,7 +33,7 @@ header select {
   vertical-align: middle;
 }
 
-header button {
+/* header button {
   width: 45%;
   height: 50px;
   float: right;
@@ -50,13 +48,14 @@ header button {
   box-shadow: none;
   outline: none;
   cursor: pointer;
-}
+} */
 
 div.categories {
-
+  position: relative;
+  padding-top: 80px;
 }
 
-/* button {
+/* .categories button {
   margin: 10px;
   width: 125px;
   height: 25px;
@@ -69,13 +68,6 @@ div.categories {
   transition-property: background, font-size, width, height;
   transition-timing-function: cubic-bezier(0.38, 1.29, 1, 1.4);
   cursor: pointer;
-} */
-
-/* button:hover {
-  background: red;
-  font-size: 18px;
-  width: 130px;
-  height: 30px;
 } */
 
 table {

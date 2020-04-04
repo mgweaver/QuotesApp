@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <select name="topics" id="topics">
+    <select name="topics" id="topics" onchange="showQuotes(value)">
       <option value="Default">Select a Topic</option>
       <option value="Family">Family</option>
       <option value="Agency">Agency</option>
@@ -23,50 +23,15 @@
       <option value="Repentance">Repentance</option>
       <option value="Forgiveness">Forgiveness</option>
     </select>
-    <button>Load Quotes</button>
+    <!-- <button onclick="showquotes()">Load Quotes</button> -->
   </header>
 
-  <div class="categories">
-    <button onclick="showFamily()">Family</button>
-    <div id="familyDiv">
-      <table id="familyTable">
-      </table>
-    </div>
-    <button onclick="showAgency()">Agency</button>
-    <div id="agencyDiv">
-      <table id="agencyTable">
-      </table>
-    </div>
-    <button onclick="showAtonement()">Atonement</button>
-    <div id="atonementDiv">
-      <table id="atonementTable">
-      </table>
-    </div>
-    <button onclick="showAddiction()">Addiction</button>
-    <div id="addictionDiv">
-      <table id="addictionTable">
-      </table>
-    </div>
-    <button onclick="showService()">Service</button>
-    <div id="serviceDiv">
-      <table id="serviceTable">
-      </table>
-    </div>
-    <button onclick="showLaziness()">Laziness</button>
-    <div id="lazinessDiv">
-      <table id="lazinessTable">
-      </table>
-    </div>
-    <button onclick="showRepentance()">Repentance</button>
-    <div id="repentanceDiv">
-      <table id="repentanceTable">
-      </table>
-    </div>
-    <button onclick="showForgiveness()">Forgiveness</button>
-    <div id="forgivenessDiv">
-      <table id="forgivenessTable">
-      </table>
-    </div>
+  <div class="categories" id="categories">
+    <table id="displayTable">
+    </table>
+  </div>
+  <div class="prevNext">
+    <button></button>
   </div>
   <a href="https://byui.instructure.com/courses/78298/modules/items/7927098" target="blank">Project Guidelines</a>
   <script src="quotes.js" async defer></script>
